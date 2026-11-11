@@ -210,16 +210,7 @@ All numbers of this run are in `docs/example_slice25_results.csv`. This was run 
 * Coil maps: ESPIRiT from the single GRE ACS block, support mask = largest eigenvalue > 0.9. **Masked** maps are used while estimating
   the phase, **unmasked** maps for the PC-SENSE check and for the coil combination. PEC-GRAPPA itself uses no coil maps.
 
-## Things to check before you publish (please read)
 
-* **Learning rate.** The manuscript text says 1×10⁻⁴; the research script (and its `training_history.json`) used 2×10⁻⁴.
-  `config.py` uses 2×10⁻⁴; change one line (or the manuscript) so that both agree.
-* **Coil channels.** The manuscript says 24 virtual coils for ESPIRiT; the supplied `Slice_*.mat` files have 12 channels.
-* **%GSR noise region.** The manuscript draws the border rows for σN by hand; here the background is found automatically
-  (far from object and ghost region), so numbers can differ slightly. `GSRplain_*` gives the simple ratio without noise correction.
-* **Only slice 25 was run here.** The full 40-slice results (and comparison with your CSV) were not possible in the environment
-  where this code was written, because only that slice was available.
-* Not included (outside D2): dual-polarity ACS with phase-adapted DPG, SMS / slice-GRAPPA, and the dynamic (128- and 380-volume) series.
 
 ## Citation / license
 
